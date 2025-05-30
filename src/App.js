@@ -16,6 +16,7 @@ import Sites from "./Components/Dashboard/Sites";
 import RefundsPage from "./Components/Dashboard/RefundedTickets";
 import CancelledTickets from "./Components/Dashboard/CancelledTicket";
 import MuseumAuth from "./Components/Auth/Login";
+import MuseumLanding from "./Components/Mainpage";
 
 function App() {
   const [email, setEmail] = useState(""); // To pass email from Signup to OTP
@@ -30,14 +31,15 @@ function App() {
         <Route path="/sites" element={<Sites />} />
         <Route path="/refunds" element={<RefundsPage />} />
         <Route path="/cancelticket" element={<CancelledTickets />} />
-<Route path="/auth" element={<MuseumAuth />} />
+        <Route path="/auth" element={<MuseumAuth />} />
+        <Route path="/MuseumLanding" element={<MuseumLanding />} />
 
 
         {/* ✅ Auth Routes */}
         <Route path="/signup" element={<Signup setEmail={setEmail} />} />
         <Route path="/verify-otp" element={<VerifyOtp email={email} />} />
         <Route path="/login" element={<Login />} />
-       </Routes>
+      </Routes>
 
       {/* <div className="min-h-screen flex">
         {/* Sidebar 
