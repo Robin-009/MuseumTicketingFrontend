@@ -10,7 +10,7 @@ const CancelledTickets = () => {
   const [monthlyCounts, setMonthlyCounts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/admin/dashboard/cancelled-tickets').then((res) => {
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/cancelled-tickets`).then((res) => {
       const data = res.data;
       setCancelledData(data);
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "http://localhost:8080/api/admin/dashboard";
+const API_BASE = `${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard`;
 
 export const getBookingSummary = (params) => axios.get(`${API_BASE}/booking-summary`, { params });
 export const getSiteBookings = (params) => axios.get(`${API_BASE}/site-bookings`, { params });

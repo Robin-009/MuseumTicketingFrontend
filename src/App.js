@@ -22,22 +22,29 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<DashboardHome />} />
-        <Route path="/visit" element={<Visit />} />
-        <Route path="/book" element={<BookingForm />} />
-        <Route path="/sites" element={<Sites />} />
-        <Route path="/refunds" element={<RefundsPage />} />
-        <Route path="/cancelticket" element={<CancelledTickets />} />
-<Route path="/auth" element={<MuseumAuth />} />
+      <div className="min-h-screen flex">
+        <Navbar/>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<DashboardHome />} />
+            <Route path="/visit" element={<Visit />} />
+            <Route path="/book" element={<BookingForm />} />
+            <Route path="/sites" element={<Sites />} />
+            <Route path="/refunds" element={<RefundsPage />} />
+            <Route path="/cancelticket" element={<CancelledTickets />} />
+            <Route path="/auth" element={<MuseumAuth />} />
 
 
-        {/* ✅ Auth Routes */}
-        <Route path="/signup" element={<Signup setEmail={setEmail} />} />
-        <Route path="/verify-otp" element={<VerifyOtp email={email} />} />
-        <Route path="/login" element={<Login />} />
-       </Routes>
+            {/* ✅ Auth Routes */}
+            <Route path="/signup" element={<Signup setEmail={setEmail} />} />
+            <Route path="/verify-otp" element={<VerifyOtp email={email} />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </main>
+      </div>
+
+
+
 
       {/* <div className="min-h-screen flex">
         {/* Sidebar 

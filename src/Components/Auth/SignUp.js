@@ -80,7 +80,7 @@ const Signup = ({ setStage, setEmail }) => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("http://localhost:8080/api/auth/signup", form);
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/signup`, form);
       if(res.status==200){
         console.log('rees--->', res)
         navigate('/verify-otp');

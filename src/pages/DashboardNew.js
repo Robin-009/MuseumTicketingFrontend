@@ -28,12 +28,12 @@ const DashboardHome = () => {
     const fetchData = async () => {
       try {
         const [revenueRes, monthlyRes, yearlyRes, siteRes, summaryRes, sitesRes] = await Promise.all([
-          axios.get('http://localhost:8080/api/admin/dashboard/revenue-stats'),
-          axios.get('http://localhost:8080/api/admin/dashboard/monthly-bookings'),
-          axios.get('http://localhost:8080/api/admin/dashboard/yearly-bookings'),
-          axios.get('http://localhost:8080/api/admin/dashboard/site-bookings'),
-          axios.get('http://localhost:8080/api/admin/dashboard/booking-summary'),
-          axios.get('http://localhost:8080/api/admin/dashboard/sites'),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/revenue-stats`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/monthly-bookings`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/yearly-bookings`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/site-bookings`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/booking-summary`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/admin/dashboard/sites`),
         ]);
 
         setRevenueStats(revenueRes.data);

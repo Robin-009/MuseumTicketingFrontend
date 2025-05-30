@@ -266,7 +266,7 @@ const Visit = () => {
   useEffect(() => {
     const fetchMuseums = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/museums");
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/museums`);
         setMuseums(res.data);
         console.log("Museum--->", res.data);
       } catch (err) {

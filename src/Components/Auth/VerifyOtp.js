@@ -10,7 +10,7 @@ const VerifyOtp = ({ email, setStage }) => {
     e.preventDefault();
     try {
         
-      await axios.post("http://localhost:8080/api/auth/verify", {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/verify`, {
         params: { email, otp },
       });
       setStage("login");
